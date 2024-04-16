@@ -1,0 +1,75 @@
+
+.left_h{
+    padding:2rem;
+    padding-top: 1.5rem;
+    flex:3;
+}
+.right_h{
+    flex: 1;
+    position: relative;
+    background-color: var(--orange);
+}
+
+.the_best_ad{
+    width: fit-content;
+    position: relative;
+}
+.the_best_ad h3{
+    z-index: 2;
+    position: relative;
+}
+.the_best_ad span{
+    width: 25%;
+    height: 100%;
+    background-color:var(--orange);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.hero_btn button:nth-child(2){
+    border: 2px solid var(--orange);
+}
+ .right_h button{
+    position: absolute;
+    top: 1.8rem;
+    right: 3rem;
+ }
+ .right_h .heartImg{
+   width: 1.6rem;
+ }
+ .right_h .heroImg{
+    position: absolute;
+    bottom: 0;
+    left:-12rem;
+    width: 23rem;
+    height: 23rem;
+    object-fit: contain;
+ }
+ .right_h .heroBackImg{
+    /* width: 60%; */
+    height: 60%;
+    object-fit: cover;
+    position: absolute;
+    left: -10rem;
+    top: 0;
+    z-index: -1;
+ }
+ .right_h .caloImg{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+ }
+.cal_box{
+    bottom:2rem;
+    left:-18rem;
+}
+
+.hero_blur{
+    width: 40%;
+    height: 50%;
+    left: 0;
+    top: 0;
+}

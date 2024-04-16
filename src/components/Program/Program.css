@@ -1,0 +1,4 @@
+.program .program_box:hover{
+    background: var(--planCard);
+    cursor: pointer;
+}

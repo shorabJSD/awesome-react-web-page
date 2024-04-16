@@ -1,0 +1,10 @@
+
+.logo{
+    width: 10rem;
+    height: 2rem;
+    object-fit: cover;
+}
+.header_menu ul li:hover{
+ color: var(--orange);
+ cursor: pointer;
+}

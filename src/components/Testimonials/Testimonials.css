@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.testimonials>.left_test{
+    flex: 1;
+}
+.testimonials>.right_test{
+    flex: 1;
+    /* background-color: blue; */
+    position: relative;
+}
+
+
+.right_test>.test_anim>:nth-child(1){
+    width: 16rem;
+    height: 22rem;
+    border: 3px solid orange;
+    z-index: -1;
+    top: -1rem;
+    /* left: 1rem; */
+    position: absolute;
+}
+.right_test>.test_anim>:nth-child(2){
+    width: 16rem;
+    height: 22rem;
+    background:var(--planCard) ;
+    position: absolute;
+    bottom:-1rem;
+    
+    z-index: -1;
+}
+
+.right_test>.arrow{
+    position: absolute;
+    left: -2.5rem;
+    bottom: 2rem;
+}

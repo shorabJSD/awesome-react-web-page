@@ -1,0 +1,14 @@
+.footer_blur_1{
+    width: 40rem;
+    height: 10rem;
+    left: 15rem;
+    filter: blur(120px);
+    background: rgba(255, 0, 0, 0.815);
+}
+.footer_blur_2{
+    width: 40rem;
+    height: 10rem;
+    right: 15rem;
+    filter: blur(120px);
+    background: rgba(255, 0, 0, 0.815);
+}
