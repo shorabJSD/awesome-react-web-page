@@ -2,7 +2,12 @@ import React from 'react'
 import '../Program/Program.css'
 import { programsData } from '../../data/programsData'
 import rightArrow from '../../assets/rightArrow.png'
+import { motion } from 'framer-motion'
+
 const Program = () => {
+    const transition = {type:'spring', duration:1}
+    const offscreen = {y:300}
+    const onscreen = {y:0}
   return (
     <div className='program px-7'>
         {/* programe header */}
@@ -12,7 +17,12 @@ const Program = () => {
             <span className='text_strock'>to shape you</span>
         </div>
         {/* programe */}
-        <div className='program flex gap-3 my-4'>
+        <motion.div 
+        initial={offscreen}
+        whileInView={onscreen}
+        transition={{...transition, type:'tween'}}
+        viewport={{ once: true, amount: 0.8 }}
+        className='program flex gap-3 my-4'>
             {programsData.map((program)=>(
                 <div className='program_box bg-gray-500 p-6 text-white text-lg'>
                     <span className='py-2 block fill-white'>{program.image}</span>
@@ -24,7 +34,7 @@ const Program = () => {
                     </div>
                 </div>
             ))}
-        </div>
+        </motion.div>
     </div>
   )
 }

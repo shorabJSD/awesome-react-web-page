@@ -3,7 +3,13 @@ import { plansData} from '../../data/plansData';
 import whitetik from '../../assets/whiteTick.png';
 import rightArrow from '../../assets/rightArrow.png';
 import './Plans.css'
+import { motion } from 'framer-motion';
+
 const Plans = () => {
+  const transition = {type:'spring', duration:3}
+  const offscreen = {y:300}
+  const onscreen = {y:0}
+
   return (
     <div className='px-7 plans'>
       <div className="blur plans_blur_1"></div>
@@ -15,7 +21,12 @@ const Plans = () => {
        </div>
  
      {/* our gym plans */}
-     <div className="ourPlan flex items-center justify-center gap-5 my-8">
+     <motion.div
+        initial={offscreen}
+        whileInView={onscreen}
+        transition={{...transition, type:'tween'}}
+        viewport={{ once: true, amount: 0.8 }}
+        className="ourPlan flex items-center justify-center gap-5 my-8">       
           {
             plansData.map((plan, i)=>(
                 <div className=" py-5 px-2" key={i}>
@@ -42,7 +53,7 @@ const Plans = () => {
                 </div>
             ))
           }
-     </div>
+     </motion.div>
        
     </div>
   )

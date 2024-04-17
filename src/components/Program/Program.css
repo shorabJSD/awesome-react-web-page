@@ -1,4 +1,9 @@
 .program .program_box:hover{
     background: var(--planCard);
     cursor: pointer;
+    transition: 0.5s ease-out;
 }
+
+
+
+

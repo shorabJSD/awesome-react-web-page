@@ -52,8 +52,8 @@
     /* width: 60%; */
     height: 60%;
     object-fit: cover;
-    position: absolute;
-    left: -10rem;
+    position: relative;
+    left:10rem;
     top: 0;
     z-index: -1;
  }

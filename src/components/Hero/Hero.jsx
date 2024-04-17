@@ -5,7 +5,11 @@ import heroImg  from '../../assets/hero_image.png'
 import heroBack  from '../../assets/hero_image_back.png'
 import calories  from '../../assets/calories.png'
 import './Hero.css'
+import { motion } from 'framer-motion'
+
+
 const Hero = () => {
+  const transition = {type:'spring', duration:3}
   return (
     <div className='hero flex'>
       <div className="blur hero_blur"></div>
@@ -13,8 +17,12 @@ const Hero = () => {
         <Header />
         {/* the best ad */}
         <div className="the_best_ad bg-gray-800 mt-20 p-2 rounded-full uppercase font-bold text-sm bg-gray-600 text-white">
-          <h3 className=''>the best fitness club in the town</h3>
-          <span></span>
+          <h3>the best fitness club in the town</h3>
+          <motion.span 
+          initial={{left:'220px'}}
+          whileInView={{left:'0'}}
+          transition={{...transition, type:'tween'}}
+          ></motion.span>
         </div>
         <div className="flex flex-col hero_text mt-5 text-white text-5xl font-bold uppercase">
           <div>
@@ -52,22 +60,35 @@ const Hero = () => {
       </div>
       <div className="right_h">
         <button className='right_btn text-xs bg-white px-2 py-2 text-sm font-bold text-xs capitalize '>Joing Now</button>
-        <div className='flex-col bg-gray-700 inline-block py-2 px-4 rounded absolute top-20 left-20'>
+        <motion.div
+        initial={{left:'-150px'}}
+        whileInView={{left:'4rem'}}
+        transition={{...transition, type:'tween'}}
+        
+        className='flex-col bg-gray-700 inline-block py-2 px-4 rounded absolute top-20 left-20'>
           <img src={heart} className='heartImg'/>
           <div className='flex text-center flex-col'>
             <span className='text-gray-400 text-xs capitalize mt-2'>heart rate</span>
             <span className='text-white'>116 bpm</span>
           </div>
-        </div>
+        </motion.div>
         <img src={heroImg} alt="" className='heroImg' />
-        <img src={heroBack} alt="" className='heroBackImg' />
-        <div className="cal_box flex items-center p-4 bg-gray-500 absolute gap-8 rounded t">
+        <motion.img 
+          initial={{left: '220px'}}
+          whileInView={{left: '-10rem'}}
+          transition={{...transition, type:'tween'}}
+        src={heroBack} alt="" className='heroBackImg' />
+        <motion.div
+        initial={{bottom:'-5rem', opacity:'0'}}
+        whileInView={{bottom:"2rem", opacity:'1'}}
+        transition={{...transition, type:'tween'}}
+        className="cal_box flex items-center p-4 bg-gray-500 absolute gap-8 rounded t">
           <img src={calories} alt="" className='caloImg'/>
           <div className='flex flex-col gap-4'>
             <span className='text-gray-400 text-xs'>Calories bun</span>
             <span>220 kcal</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
