@@ -1,30 +1,13 @@
+import { motion } from 'framer-motion';
 import React from 'react';
-
-import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
 const JoinUs = () => {
-   
-    const form = useRef()
-    const sendEmail = (e) => {
-        e.preventDefault();
-        emailjs
-          .sendForm('service_8rrxo2w', 'template_jomq7zj', form.current, {
-            publicKey: 'E6icjRm_Jx9v3O6dJerPk',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-      };
-
-
-
+   const transition = {type:'spring', duration:2}
   return (
-    <div className='join_with_us px-7 flex gap-5 mb-5'>
+    <motion.div
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    transition={{...transition, type:'tween'}}
+    className='join_with_us px-7 flex gap-5 mb-5'>
        <div className="left_j text-white flex-1">
         <hr style={{background:'var(--planCard)', height:'5px'}} className='w-20 border-0'/>
             <div className='mt-3 flex gap-2'>
@@ -37,12 +20,12 @@ const JoinUs = () => {
             </div>
        </div>
        <div className="right_j flex-1 flex items-center ">
-          <form ref={form} style={{backgroundColor:'var(--caloryCard)'}} className='gap-5 flex p-3' onSubmit={sendEmail}>
+          <form  style={{backgroundColor:'var(--caloryCard)'}} className='gap-5 flex p-3'>
             <input type="email" name='user_email' placeholder='your@gmail.com' className='p-2 outline-0 bg-transparent'/>
             <button className='bg-white text-xs px-4'>join now</button>
           </form>
        </div>
-    </div>
+    </motion.div>
   )
 }
 

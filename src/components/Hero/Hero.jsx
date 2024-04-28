@@ -25,13 +25,20 @@ const Hero = () => {
           ></motion.span>
         </div>
         <div className="flex flex-col hero_text mt-5 text-white text-5xl font-bold uppercase">
-          <div>
-            <span className='text_strock'>shape </span>
-            <span>your</span>
-          </div>
-          <div>
-            <span>ideal body</span>
-          </div>
+          <motion.div
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{...transition, type:'tween'}}
+          >
+            <div>
+              <span className='text_strock'>shape </span>
+              <span>your</span>
+            </div>
+            <div>
+              <span>ideal body</span>
+            </div>
+          </motion.div>
+          
           <div className='text-sm w-3/4 mt-4 normal-case'>
             <span className=''>In here we will help you to shape and build your ideal body and live up your life to fullest</span>
           </div>

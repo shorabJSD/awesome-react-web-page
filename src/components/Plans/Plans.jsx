@@ -6,9 +6,7 @@ import './Plans.css'
 import { motion } from 'framer-motion';
 
 const Plans = () => {
-  const transition = {type:'spring', duration:3}
-  const offscreen = {y:300}
-  const onscreen = {y:0}
+  const transition = {type:'spring', duration:1}
 
   return (
     <div className='px-7 plans'>
@@ -22,10 +20,9 @@ const Plans = () => {
  
      {/* our gym plans */}
      <motion.div
-        initial={offscreen}
-        whileInView={onscreen}
+        initial={{opacity:0, y:100}}
+        whileInView={{opacity:1, y:0}}
         transition={{...transition, type:'tween'}}
-        viewport={{ once: true, amount: 0.8 }}
         className="ourPlan flex items-center justify-center gap-5 my-8">       
           {
             plansData.map((plan, i)=>(

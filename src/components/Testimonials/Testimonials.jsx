@@ -36,7 +36,7 @@ const Testimonials = () => {
                 animate={{opacity:1, x:0}}
                 exit={{opacity:0, x:-100}}
                 transition={{...anim, type:'tween'}}
-                
+               
                 className="">
                     <span style={{color:'var(--orange)'}} className=' font-bold'>{testimonialsData[selected].name}</span>
                     <span className='text-white font-bold'> - {testimonialsData[selected].status}</span>

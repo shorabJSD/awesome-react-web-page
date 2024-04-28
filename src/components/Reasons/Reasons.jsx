@@ -9,9 +9,15 @@ import nb from '../../assets/nb.png';
 import tik from '../../assets/tick.png';
 
 import './Reasons.css';
+import { motion } from 'framer-motion';
 const Reasons = () => {
+   const transition = {type:'spring', duration:2}
   return (
-    <div className='reason flex gap-10'>
+    <motion.div
+     initial={{opacity:0, y:100}}
+     whileInView={{opacity:1, y:0}}
+     transition={{...transition, type:'tween'}}
+    className='reason flex gap-10'>
       <div className="left_r">
         <img className='reason_img' src={image1} alt="" />
         <img className='reason_img' src={image2} alt="" />
@@ -52,7 +58,7 @@ const Reasons = () => {
            </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
